@@ -12,7 +12,7 @@
 	<artifactId>backendGym</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>backendGym</name>
-	<description>Proyecto Gimnasio </description>
+	<description>Proyecto Gimnasio</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -64,7 +64,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.eclipse.angus</groupId>
+            <artifactId>jakarta.mail</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
