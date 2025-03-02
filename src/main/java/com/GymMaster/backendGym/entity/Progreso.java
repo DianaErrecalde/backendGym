@@ -1,4 +1,4 @@
-package com.GymMaster.backendGym.Entidades;
+package com.GymMaster.backendGym.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,18 +16,18 @@ public class Progreso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_progreso;
 
-    @Column(name ="pesoPersona", nullable = false , unique = true, length = 50)
+    @Column(name = "pesoPersona", nullable = false , unique = true, length = 50)
     private String pesoPersona;
 
-    @Column (name="Series" )
-    private int series;
+    @Column (name= "Series" )
+    private Integer series;
 
-    @Column (name ="repeticiones" )
-    private int repeticiones;
+    @Column (name = "repeticiones" )
+    private Integer repeticiones;
 
     @Column (name = "duracion")
-    private int duracion;
+    private Integer duracion;
 
     @Column (name = "peso")
-    private int peso;
+    private Integer peso;
 }

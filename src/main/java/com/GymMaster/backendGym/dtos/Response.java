@@ -1,4 +1,4 @@
-package com.GymMaster.backendGym.DTOs;
+package com.GymMaster.backendGym.dtos;
 
 import java.util.List;
 

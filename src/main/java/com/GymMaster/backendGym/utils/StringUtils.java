@@ -1,4 +1,4 @@
-package com.GymMaster.backendGym.Utils;
+package com.GymMaster.backendGym.utils;
 public class StringUtils {
     /**
      * retorna vacio si el string del parametro esta nulo vacio o en blanco
