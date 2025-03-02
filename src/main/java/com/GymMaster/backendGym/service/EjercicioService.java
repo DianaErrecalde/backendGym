@@ -14,6 +14,8 @@ public class EjercicioService {
     }
 
     public Ejercicio crearNuevo (NuevoEjercicio nuevo){
-        return this.ejercicioRepo.insertarEjercicio(nuevo.getNombre());
+        Ejercicio ejercicio = new Ejercicio();
+        ejercicio.setNombre(nuevo.getNombre());
+        return this.ejercicioRepo.save(ejercicio);
     }
 }
