@@ -18,4 +18,8 @@ public class Ejercicio {
 
     @Column(name ="nombre", nullable = false, unique = true, length = 100)
     private String nombre;
+
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private boolean en_desuso;
+
 }

@@ -29,5 +29,5 @@ public class Progreso {
     private Integer duracion;
 
     @Column (name = "peso")
-    private Integer peso;
+    private Double peso;
 }

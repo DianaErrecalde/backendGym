@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("ejercicios")
 public class EjercicioController {
@@ -22,4 +24,23 @@ public class EjercicioController {
         Ejercicio insertado = this.ejercicioService.crearNuevo(nuevo);
         return new ResponseEntity<>(insertado, HttpStatus.OK);
     }
+
+    @GetMapping("/{nombre}")
+    public ResponseEntity <?> buscarPorNombre(@PathVariable String nombre){
+        Ejercicio ejercicio = this.ejercicioService.buscarPorNombre(nombre);
+        return new ResponseEntity<>(ejercicio, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity <?> buscarTodos(){
+        List<Ejercicio> ejercicios = this.ejercicioService.buscarTodos();
+        return new ResponseEntity<>(ejercicios, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{nombre}")
+    public ResponseEntity <?> eliminarPorNombre(@PathVariable String nombre){
+        Ejercicio ejercicio = this.ejercicioService.eliminarPorNombre(nombre);
+        return new ResponseEntity<>(ejercicio,HttpStatus.OK);
+    }
+
 }

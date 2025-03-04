@@ -5,6 +5,8 @@ import com.GymMaster.backendGym.repository.EjercicioRepository;
 import com.GymMaster.backendGym.request.NuevoEjercicio;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EjercicioService {
     private EjercicioRepository ejercicioRepo;
@@ -14,8 +16,20 @@ public class EjercicioService {
     }
 
     public Ejercicio crearNuevo (NuevoEjercicio nuevo){
-        Ejercicio ejercicio = new Ejercicio();
-        ejercicio.setNombre(nuevo.getNombre());
-        return this.ejercicioRepo.save(ejercicio);
+        this.ejercicioRepo.insertarEjercicio(nuevo.getNombre());
+        return this.buscarPorNombre(nuevo.getNombre());
+    }
+
+    public Ejercicio buscarPorNombre(String nombre){
+        return this.ejercicioRepo.buscarPorNombre(nombre);
+    }
+
+    public List<Ejercicio> buscarTodos(){
+        return this.ejercicioRepo.listarTodos();
+    }
+
+    public Ejercicio eliminarPorNombre(String nombre) {
+        this.ejercicioRepo.eliminarPorNombre(nombre);
+        return this.buscarPorNombre(nombre);
     }
 }
