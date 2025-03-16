@@ -26,7 +26,7 @@ public interface EjercicioRepository extends JpaRepository <Ejercicio, Long> {
 
     @Transactional
     @Modifying
-    @Query(value = "UPDATE ejercicios SET en_desuso = true WHERE nombre = :nombre", nativeQuery = true)
-    void eliminarPorNombre(@Param("nombre") String nombre);
+    @Query(value = "UPDATE ejercicios SET en_desuso = :enDesuso WHERE nombre = :nombre", nativeQuery = true)
+    void cambiarEstadoPorNombre(@Param("nombre") String nombre, @Param("enDesuso") boolean enDesuso);
 
 }

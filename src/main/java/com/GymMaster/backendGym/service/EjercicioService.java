@@ -28,8 +28,8 @@ public class EjercicioService {
         return this.ejercicioRepo.listarTodos();
     }
 
-    public Ejercicio eliminarPorNombre(String nombre) {
-        this.ejercicioRepo.eliminarPorNombre(nombre);
+    public Ejercicio cambiarEstadoPorNombre(String nombre, boolean enDesuso){
+        this.ejercicioRepo.cambiarEstadoPorNombre(nombre, enDesuso);
         return this.buscarPorNombre(nombre);
     }
 }

@@ -38,9 +38,9 @@ public class EjercicioController {
         return new ResponseEntity<>(ejercicios, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{nombre}")
-    public ResponseEntity <?> eliminarPorNombre(@PathVariable String nombre){
-        Ejercicio ejercicio = this.ejercicioService.eliminarPorNombre(nombre);
+    @PutMapping()
+    public ResponseEntity <?> eliminarPorNombre(@RequestParam String nombre, @RequestParam boolean enDesuso){
+        Ejercicio ejercicio = this.ejercicioService.cambiarEstadoPorNombre(nombre, enDesuso);
         return new ResponseEntity<>(ejercicio,HttpStatus.OK);
     }
 
